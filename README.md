@@ -34,11 +34,19 @@ yields
     }
   }
 ```
-  because all the stuff in a is not in b.
+  because all the stuff in a is not in b (this diff shows extra or different, only for the first object).
+  You can get the same for the second object by reversing the order
+  in your call
+
 
   if two objects are are the same
   it objectDiff yields undefined
+ex:
+```js
+  objectDiff({}, {}) === undefined //true
+```
 
+more examples
 ```js
   objectDiff(
   {
