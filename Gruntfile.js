@@ -1,5 +1,4 @@
 /*jslint node:true*/
-var http = require('http');
 module.exports = function(grunt) {
   "use strict";
   grunt.loadNpmTasks('grunt-contrib-jshint');
