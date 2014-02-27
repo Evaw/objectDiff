@@ -3,7 +3,7 @@ Object diff.js
 
 Usage
 ---
-this objectDiff will get the extra and different properties of the
+objectDiff will get the extra and different properties of the
 first object
 
 ex.
@@ -80,11 +80,19 @@ yields
 ```
 because the first object is only different in the path steel.train.hasCoal
 
+
+Warning
+---
 make sure you run tests with data that resembles your application
 
-if you just want to use it, check src for nodejs
-or dist for browsers
 
+There are things that may not be implemented.
+Circular structures come to mind as they have not been tested.
+
+distribution
+---
+the distribution file is under dist
+you can pick minified or not minified
 
 
 Building
