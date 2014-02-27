@@ -1,20 +1,20 @@
 /*global test:false, ok:false, deepEqual:false, objectDiff:false*/
 "use strict";
-test('first has extra stuff', function(){
+test('first has extra stuff', function () {
   var a = {
-    a:"hello"
+    a: "hello"
   },
-  b = {};
-  deepEqual(objectDiff(a,b), a, "found first has extra key with a string");
+    b = {};
+  deepEqual(objectDiff(a, b), a, "found first has extra key with a string");
   a = {
     a: "hello",
     A: 1
   };
   b = {};
-  deepEqual(objectDiff(a,b), a, "found first has extra keys with a nuber and a string");
+  deepEqual(objectDiff(a, b), a, "found first has extra keys with a nuber and a string");
   a = {
     a: {
-      s:"t"
+      s: "t"
     }
   };
   b = {
@@ -22,7 +22,7 @@ test('first has extra stuff', function(){
 
     }
   };
-  deepEqual(objectDiff(a,b), a, 'first object has a child with extra stuff');
+  deepEqual(objectDiff(a, b), a, 'first object has a child with extra stuff');
   a = {
     steel: {
       sword: "aaa",
@@ -30,12 +30,16 @@ test('first has extra stuff', function(){
     }
   };
   b = {
-    steel:  {
+    steel: {
       sword: "aaa",
       train: "rrr"
     }
   };
-  deepEqual(objectDiff(a,b), {steel:{train:"bbb"}}, 'only part of a child is extra');
+  deepEqual(objectDiff(a, b), {
+    steel: {
+      train: "bbb"
+    }
+  }, 'only part of a child is extra');
 
   a = {
     steel: {
@@ -45,20 +49,24 @@ test('first has extra stuff', function(){
     }
   };
   b = {};
-  deepEqual(objectDiff(a,b), a, 'second obj has nothing, first has lots');
+  deepEqual(objectDiff(a, b), a, 'second obj has nothing, first has lots');
   a = {
-    a:"L"
+    a: "L"
   };
   b = null;
-  deepEqual(objectDiff(a,b), a, 'first has something, second is null');
+  deepEqual(objectDiff(a, b), a, 'first has something, second is null');
 
   a = null;
   b = {
     a: "a"
   };
-  deepEqual(objectDiff(a,b), a, "first is just null");
+  deepEqual(objectDiff(a, b), a, "first is just null");
 
 
+
+});
+test('completely different', function () {
+  var a,b;
   a = {
     steel: {
       sword: {
@@ -73,22 +81,21 @@ test('first has extra stuff', function(){
       }
     }
   };
-  deepEqual(objectDiff(a,b), a, "is completely different from b ,even though they both have the same children");
+  deepEqual(objectDiff(a, b), a, "is completely different from b ,even though they both have the same children");
 
 });
-
-test('eq obj', function(){
-  var check = function(obj) {
+test('eq obj', function () {
+  var check = function (obj) {
     ok(objectDiff(obj, obj) === undefined);
   };
   check(null);
   check({});
   check({
-    A:"a"
+    A: "a"
   });
   check({
     A: {
-      a:"a"
+      a: "a"
     }
   });
   check({
