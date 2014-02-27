@@ -39,14 +39,15 @@ yields
   in your call
 
 
-  if two objects are are the same
-  it objectDiff yields undefined
-ex:
+  if two objects are are the same,
+  objectDiff yields undefined
+
+ex.
 ```js
   objectDiff({}, {}) === undefined //true
 ```
 
-more examples
+more examples.
 ```js
   objectDiff(
   {
@@ -91,15 +92,16 @@ Circular structures come to mind as they have not been tested.
 
 distribution
 ---
-the distribution file is under dist
+the distribution file is under dist,
 you can pick minified or not minified
 
 
 Building
 ---
 
-creating build from scratch requires nodejs and grunt
-the build is already in this repo under dist
+creating build from scratch requires nodejs and grunt.
+Note that, the build is already in this repo under dist.
+
 
 Install nodejs from its site
 >http://nodejs.org/
