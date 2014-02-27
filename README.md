@@ -81,13 +81,7 @@ yields
 because the first object is only different in the path steel.train.hasCoal
 
 make sure you run tests with data that resembles your application
-}
-}
-```
 
-
-
----
 if you just want to use it, check src for nodejs
 or dist for browsers
 
