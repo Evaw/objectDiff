@@ -120,4 +120,41 @@ test('array object mix', function(){
   deepEqual(objectDiff(a,b), ans);
   ans = undefined;
   deepEqual(objectDiff(b,a), ans);
+
+
+  a = {
+    arr: [{o:"p"}]
+  };
+  b = undefined;
+  ans = a;
+  deepEqual(objectDiff(a, b), ans);
+
+  //a = a;
+  b = {
+    arr:[]
+  };
+  ans = a;
+  deepEqual(objectDiff(a,b), ans);
+
+  a = {
+    arr: [{o: "p"}]
+  };
+  b = {
+    arr: [{o: "p"}]
+  };
+  ans = undefined;
+  deepEqual(objectDiff(a,b),ans);
+
+  a = {
+    arr: [{o: "p"}],
+    arr2: [{r: "a"}]
+  };
+  b = {
+    arr: [{o: "p"}]
+  };
+  ans = {
+    arr2: [{r: "a"}]
+  };
+  deepEqual(objectDiff(a,b), ans);
+
 });
