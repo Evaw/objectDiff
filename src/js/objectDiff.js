@@ -1,5 +1,16 @@
 (function () {
   "use strict";
+  var isArray = (function () {
+    if(Array && Array.isArray)  {
+      return Array.isArray;
+    }
+    return function (o) {
+      return Object.prototype.toString.call(o) === '[object Array]';
+    };
+  }());
+  var getEquivalentEmpty = function (objOrArr) {
+    return isArray(objOrArr) ? [] : {};
+  };
   var getFirstExtraKeys = function (first, second) {
     var i;
     var curExtra;
@@ -13,12 +24,14 @@
           */
           childExtra = getFirstExtraKeys(first[i], (second || {})[i]);
           if (childExtra !== undefined) {
-            curExtra = curExtra || {};
+            //curExtra = curExtra || {};
+            curExtra = curExtra || getEquivalentEmpty(first);
             curExtra[i] = childExtra;
           }
         } else {
           if(second === undefined || second === null || second[i] !== first[i]){
-              curExtra = curExtra || {};
+              //curExtra = curExtra || {};
+              curExtra = curExtra || getEquivalentEmpty(first);
               curExtra[i] = first[i];
           }
         }
@@ -26,7 +39,7 @@
     }
     return curExtra;
   };
-  module.exports =function(first, second){
+  module.exports = function(first, second){
     var res = getFirstExtraKeys({itm: first}, {itm: second});
     return (res || {}).itm;
   };

@@ -102,3 +102,11 @@ test('eq obj', function () {
 
   });
 });
+test('arrays', function () {
+  var a = [1,2,3];
+  var b = [1];
+  var ans = [];
+  ans[1] = 2;
+  ans[2] = 3;
+  deepEqual(objectDiff(a,b), ans);
+});
