@@ -2,11 +2,8 @@
   "name": "objectDiff",
   "version": "0.0.0",
   "description": "get diff object",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt qunit"
   },
   "author": "",
   "devDependencies": {
