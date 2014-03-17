@@ -110,3 +110,14 @@ test('arrays', function () {
   ans[2] = 3;
   deepEqual(objectDiff(a,b), ans);
 });
+test('array object mix', function(){
+  var a = {
+    "arr": [1,2,3],
+    "k": "l"
+  };
+  var b;
+  var ans = a;
+  deepEqual(objectDiff(a,b), ans);
+  ans = undefined;
+  deepEqual(objectDiff(b,a), ans);
+});
