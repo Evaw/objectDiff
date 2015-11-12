@@ -1,3 +1,5 @@
+# objectDiff [![Build Status](https://travis-ci.org/Evaw/objectDiff.svg?branch=master)](https://travis-ci.org/Evaw/objectDiff)
+
 Object diff.js
 ===
 
