@@ -118,3 +118,10 @@ run grunt to build the project
 ```sh
 grunt
 ```
+
+
+test
+
+```sh
+mocha
+```
