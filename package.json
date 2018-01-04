@@ -1,21 +1,15 @@
 {
   "name": "objectDiff",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "get diff object",
+  "main": "src/index.js",
   "scripts": {
-    "test": "grunt qunit"
+    "test": "jest",
+    "lint": "eslint ./src"
   },
   "author": "",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-browserify": "~1.3.1",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-less": "~0.9.0",
-    "grunt-contrib-qunit": "~0.4.0",
-    "grunt-contrib-uglify": "~0.3.2",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-debug-task": "~0.1.3",
-    "mocha": "^2.3.3"
+    "eslint": "^4.14.0",
+    "jest": "^22.0.4"
   }
 }
