@@ -89,38 +89,24 @@ make sure you run tests with data that resembles your application
 There are things that may not be implemented.
 Circular structures come to mind as they have not been tested.
 
-distribution
----
-the distribution file is under dist,
-you can pick minified or not minified
-
-
-Building
----
-
-creating build from scratch requires nodejs and grunt.
-Note that, the build is already in this repo under dist.
-
-
-Install nodejs from its site
->http://nodejs.org/
-
-once nodejs is installed install grunt globally
+Developing
+=========
+get the dependencies
 ```sh
-sudo npm install -g grunt-cli
-```
-go to the root of this project (the one conaining package.json) and install the building dependencies:
-```sh
-npm install
-```
-run grunt to build the project
-```sh
-grunt
+yarn
 ```
 
+lint
+
+```
+yarn run lint
+```
 
 test
 
 ```sh
-mocha
+yarn run test
+```
+```
+yarn run test -- --watch
 ```
