@@ -1,18 +1,19 @@
-/*global test:false, ok:false, deepEqual:false, objectDiff:false*/
+/* global it:false */
 "use strict";
-var assert = require('assert');
-var objectDiff = require('./src/js/objectDiff.js');
+var assert = require("assert");
+var objectDiff = require("..");
 var deepEqual = assert.deepEqual;
 var ok = assert.ok;
-it('first has extra stuff', function () {
+
+it("first has extra stuff", function () {
   var a = {
-    a: "hello"
-  },
+      a: "hello"
+    },
     b = {};
   deepEqual(objectDiff(a, b), a, "found first has extra key with a string");
   a = {
     a: "hello",
-    A: 1
+    A: 1,
   };
   b = {};
   deepEqual(objectDiff(a, b), a, "found first has extra keys with a nuber and a string");
@@ -26,7 +27,7 @@ it('first has extra stuff', function () {
 
     }
   };
-  deepEqual(objectDiff(a, b), a, 'first object has a child with extra stuff');
+  deepEqual(objectDiff(a, b), a, "first object has a child with extra stuff");
   a = {
     steel: {
       sword: "aaa",
@@ -43,7 +44,7 @@ it('first has extra stuff', function () {
     steel: {
       train: "bbb"
     }
-  }, 'only part of a child is extra');
+  }, "only part of a child is extra");
 
   a = {
     steel: {
@@ -53,12 +54,12 @@ it('first has extra stuff', function () {
     }
   };
   b = {};
-  deepEqual(objectDiff(a, b), a, 'second obj has nothing, first has lots');
+  deepEqual(objectDiff(a, b), a, "second obj has nothing, first has lots");
   a = {
     a: "L"
   };
   b = null;
-  deepEqual(objectDiff(a, b), a, 'first has something, second is null');
+  deepEqual(objectDiff(a, b), a, "first has something, second is null");
 
   a = null;
   b = {
@@ -69,7 +70,7 @@ it('first has extra stuff', function () {
 
 
 });
-it('completely different', function () {
+it("completely different", function () {
   var a,b;
   a = {
     steel: {
@@ -88,7 +89,7 @@ it('completely different', function () {
   deepEqual(objectDiff(a, b), a, "is completely different from b ,even though they both have the same children");
 
 });
-it('eq obj', function () {
+it("eq obj", function () {
   var check = function (obj) {
     ok(objectDiff(obj, obj) === undefined);
   };
@@ -106,7 +107,7 @@ it('eq obj', function () {
 
   });
 });
-it('arrays', function () {
+it("arrays", function () {
   var a = [1,2,3];
   var b = [1];
   var ans = [];
@@ -114,7 +115,7 @@ it('arrays', function () {
   ans[2] = 3;
   deepEqual(objectDiff(a,b), ans);
 });
-it('array object mix', function(){
+it("array object mix", function(){
   var a = {
     "arr": [1,2,3],
     "k": "l"
@@ -160,5 +161,4 @@ it('array object mix', function(){
     arr2: [{r: "a"}]
   };
   deepEqual(objectDiff(a,b), ans);
-
 });
