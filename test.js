@@ -1,11 +1,12 @@
-/*global test:false, ok:false, deepEqual:false, objectDiff:false*/
-"use strict";
-var assert = require('assert');
-var objectDiff = require('./src/js/objectDiff.js');
-var deepEqual = assert.deepEqual;
-var ok = assert.ok;
+/* global test:false, ok:false, deepEqual:false, objectDiff:false */
+
+var assert = require('assert')
+var objectDiff = require('./dist/index.js').default
+const deepEqual = assert.deepEqual
+const ok = assert.ok
+
 it('first has extra stuff', function () {
-  var a = {
+  let a = {
     a: "hello"
   },
     b = {};
@@ -70,15 +71,14 @@ it('first has extra stuff', function () {
 
 });
 it('completely different', function () {
-  var a,b;
-  a = {
+  const a = {
     steel: {
       sword: {
         weight: 20
       }
     }
   };
-  b = {
+  const b = {
     steel: {
       train: {
         contains: "coal"
@@ -89,7 +89,7 @@ it('completely different', function () {
 
 });
 it('eq obj', function () {
-  var check = function (obj) {
+  const check = function (obj) {
     ok(objectDiff(obj, obj) === undefined);
   };
   check(null);
@@ -107,24 +107,23 @@ it('eq obj', function () {
   });
 });
 it('arrays', function () {
-  var a = [1,2,3];
-  var b = [1];
-  var ans = [];
+  const a = [1,2,3];
+  const b = [1];
+  const ans = [];
   ans[1] = 2;
   ans[2] = 3;
   deepEqual(objectDiff(a,b), ans);
 });
 it('array object mix', function(){
-  var a = {
+  let a = {
     "arr": [1,2,3],
     "k": "l"
   };
-  var b;
-  var ans = a;
+  let b = undefined
+  let ans = a;
   deepEqual(objectDiff(a,b), ans);
   ans = undefined;
   deepEqual(objectDiff(b,a), ans);
-
 
   a = {
     arr: [{o:"p"}]
@@ -160,5 +159,4 @@ it('array object mix', function(){
     arr2: [{r: "a"}]
   };
   deepEqual(objectDiff(a,b), ans);
-
 });
