@@ -1,5 +1,6 @@
 {
-  "name": "objectDiff",
+  "name": "just-the-diff",
+  "description": "A diff tool that returns just the keys and values that have changed, nothing else. No meta data.",
   "version": "0.1.0",
   "description": "get diff object",
   "entry": "dist/index.js",
