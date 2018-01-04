@@ -1,13 +1,17 @@
 {
-  "name": "objectDiff",
-  "version": "0.1.0",
-  "description": "get diff object",
+  "name": "just-the-diff",
+  "description": "A diff tool that returns just the keys and values that have changed, nothing else. No meta data.",
+  "version": "0.1.1",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Evaw/objectDiff"
+  },
   "scripts": {
     "test": "jest",
     "lint": "eslint ./src"
   },
-  "author": "",
+  "author": "Evaw (https://github.com/Evaw)",
   "devDependencies": {
     "eslint": "^4.14.0",
     "jest": "^22.0.4"
